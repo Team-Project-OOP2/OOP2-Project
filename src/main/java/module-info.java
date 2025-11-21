@@ -10,4 +10,6 @@ module org.example.hotelmanagementsystem {
     exports org.example.hotelmanagementsystem;
     exports hotelmanagement;
     opens hotelmanagement to javafx.fxml;
+    exports hotelmanagement.application;
+    opens hotelmanagement.application to javafx.fxml;
 }

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox alignment="CENTER" spacing="10" xmlns="http://javafx.com/javafx/17"
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="hotelmanagement.controller.LoginController"
+      stylesheets="@../style/login.css"
+      padding="20">
+
+    <Label text="Hotel Management System" style="-fx-font-size: 22; -fx-font-weight: bold;"/>
+
+    <TextField fx:id="emailField" promptText="Email" prefWidth="250"/>
+    <PasswordField fx:id="passwordField" promptText="Password" prefWidth="250"/>
+
+    <Button text="Login" onAction="#onLoginClick" prefWidth="120"/>
+
+    <Label fx:id="errorLabel" textFill="red" />
+
+</VBox>
