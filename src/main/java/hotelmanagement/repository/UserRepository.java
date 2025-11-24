@@ -30,4 +30,8 @@ import java.util.List;
     public List<User> getAllUsers() {
         return users;
     }
+
+    public void deleteUser(String id) {
+        users.removeIf(u -> u.getId().equals(id));
+    }
 }

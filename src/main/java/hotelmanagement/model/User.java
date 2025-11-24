@@ -1,80 +1,69 @@
 package hotelmanagement.model;
 
-import java.util.UUID;
+import javafx.beans.property.SimpleStringProperty;
+import javafx.beans.property.StringProperty;
 
-/**
- * Базов клас User, който представя всеки потребител в системата.
- * От този клас ще наследяват: Admin, Owner, Manager, Receptionist и Client.
- */
 public abstract class User {
 
-    private String id;
-    private String name;
-    private String email;
-    private String password;
-    private String role;
+    private final StringProperty id;
+    private final StringProperty name;
+    private final StringProperty email;
+    private final StringProperty password;
+    private final StringProperty role;
 
-    /**
-     * Конструктор по подразбиране – генерира уникално ID.
-     */
     public User() {
-        this.id = UUID.randomUUID().toString();
+        this.id = new SimpleStringProperty(java.util.UUID.randomUUID().toString());
+        this.name = new SimpleStringProperty("");
+        this.email = new SimpleStringProperty("");
+        this.password = new SimpleStringProperty("");
+        this.role = new SimpleStringProperty("");
     }
 
-    /**
-     * Конструктор с параметри.
-     */
     public User(String name, String email, String password, String role) {
-        this.id = UUID.randomUUID().toString();
-        this.name = name;
-        this.email = email;
-        this.password = password;
-        this.role = role;
+        this.id = new SimpleStringProperty(java.util.UUID.randomUUID().toString());
+        this.name = new SimpleStringProperty(name);
+        this.email = new SimpleStringProperty(email);
+        this.password = new SimpleStringProperty(password);
+        this.role = new SimpleStringProperty(role);
     }
 
     public String getId() {
+        return id.get();
+    }
+
+    public StringProperty idProperty() {
         return id;
     }
 
     public String getName() {
+        return name.get();
+    }
+
+    public StringProperty nameProperty() {
         return name;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public String getEmail() {
+        return email.get();
     }
 
-    public String getEmail() {
+    public StringProperty emailProperty() {
         return email;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
+    public String getPassword() {
+        return password.get();
     }
 
-    public String getPassword() {
+    public StringProperty passwordProperty() {
         return password;
     }
 
-    public void setPassword(String password) {
-        this.password = password;
-    }
-
     public String getRole() {
+        return role.get();
+    }
+
+    public StringProperty roleProperty() {
         return role;
-    }
-
-    public void setRole(String role) {
-        this.role = role;
-    }
-
-    @Override
-    public String toString() {
-        return "User{" +
-                "id='" + id + '\'' +
-                ", name='" + name + '\'' +
-                ", email='" + email + '\'' +
-                ", role='" + role + '\'' +
-                '}';
     }
 }

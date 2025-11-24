@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.geometry.*?>
+
+<VBox xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="hotelmanagement.controller.ManageUsersController"
+      spacing="10"
+      alignment="TOP_CENTER"
+      style="-fx-padding:20;">
+
+    <Label text="Manage Users" style="-fx-font-size:24;"/>
+
+    <TableView fx:id="userTable" prefHeight="400" prefWidth="700">
+        <columns>
+            <TableColumn text="ID" prefWidth="150" fx:id="colId"/>
+            <TableColumn text="Name" prefWidth="150" fx:id="colName"/>
+            <TableColumn text="Email" prefWidth="200" fx:id="colEmail"/>
+            <TableColumn text="Role" prefWidth="150" fx:id="colRole"/>
+        </columns>
+    </TableView>
+
+    <HBox spacing="10" alignment="CENTER">
+        <Button text="Add User" fx:id="btnAdd"/>
+        <Button text="Edit User" fx:id="btnEdit"/>
+        <Button text="Delete User" fx:id="btnDelete"/>
+    </HBox>
+
+</VBox>
