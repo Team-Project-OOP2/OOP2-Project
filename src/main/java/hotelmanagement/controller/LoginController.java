@@ -3,9 +3,12 @@ package hotelmanagement.controller;
 import hotelmanagement.model.User;
 import hotelmanagement.service.UserService;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import javafx.stage.Stage;
 
 public class LoginController {
 
@@ -32,5 +35,36 @@ public class LoginController {
             return;
         }
         System.out.println("LOGIN SUCCESSFUL: " + user.getRole());
+
+        if (user.getRole().equalsIgnoreCase("ADMIN")) {
+            loadView("/view/admin-view.fxml");
+            return;
+        }
+
+        if (user.getRole().equalsIgnoreCase("MANAGER")) {
+            loadView("/view/manager-view.fxml");
+            return;
+        }
+
+        if (user.getRole().equalsIgnoreCase("RECEPTIONIST")) {
+            loadView("/view/reception-view.fxml");
+            return;
+        }
+
+        if (user.getRole().equalsIgnoreCase("CLIENT")) {
+            loadView("/view/client-view.fxml");
+        }
+    }
+
+    private void loadView(String fxml) {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource(fxml));
+            Scene scene = new Scene(loader.load(), 800, 500);
+            Stage stage = (Stage) emailField.getScene().getWindow();
+            stage.setScene(scene);
+            stage.show();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 }
