@@ -1,80 +1,66 @@
 package hotelmanagement.model;
 
-/**
- * Клас Room – представя хотелска стая в системата.
- */
+import javafx.beans.property.*;
+
 public class Room {
 
-    private int roomNumber;
-    private String type;
-    private double price;
-    private int capacity;
-    private boolean occupied;
+    private final StringProperty number;
+    private final StringProperty type;
+    private final DoubleProperty price;
+    private final StringProperty status;
 
-    /**
-     * Конструктор по подразбиране.
-     */
-    public Room() {}
-
-    /**
-     * Конструктор с параметри.
-     */
-    public Room(int roomNumber, String type, double price, int capacity, boolean occupied) {
-        this.roomNumber = roomNumber;
-        this.type = type;
-        this.price = price;
-        this.capacity = capacity;
-        this.occupied = occupied;
+    public Room(String number, String type, double price, String status) {
+        this.number = new SimpleStringProperty(number);
+        this.type = new SimpleStringProperty(type);
+        this.price = new SimpleDoubleProperty(price);
+        this.status = new SimpleStringProperty(status);
     }
 
-    public int getRoomNumber() {
-        return roomNumber;
+    public StringProperty numberProperty() {
+        return number;
     }
 
-    public void setRoomNumber(int roomNumber) {
-        this.roomNumber = roomNumber;
-    }
-
-    public String getType() {
+    public StringProperty typeProperty() {
         return type;
     }
 
-    public void setType(String type) {
-        this.type = type;
-    }
-
-    public double getPrice() {
+    public DoubleProperty priceProperty() {
         return price;
     }
 
+    public StringProperty statusProperty() {
+        return status;
+    }
+
+    public String getNumber() {
+        return number.get();
+    }
+
+    public String getType() {
+        return type.get();
+    }
+
+    public double getPrice() {
+        return price.get();
+    }
+
+    public String getStatus() {
+        return status.get();
+    }
+
+    public void setNumber(String number) {
+        this.number.set(number);
+    }
+
+    public void setType(String type) {
+        this.type.set(type);
+    }
+
     public void setPrice(double price) {
-        this.price = price;
+        this.price.set(price);
     }
 
-    public int getCapacity() {
-        return capacity;
-    }
-
-    public void setCapacity(int capacity) {
-        this.capacity = capacity;
-    }
-
-    public boolean isOccupied() {
-        return occupied;
-    }
-
-    public void setOccupied(boolean occupied) {
-        this.occupied = occupied;
-    }
-
-    @Override
-    public String toString() {
-        return "Room{" +
-                "roomNumber=" + roomNumber +
-                ", type='" + type + '\'' +
-                ", price=" + price +
-                ", capacity=" + capacity +
-                ", occupied=" + occupied +
-                '}';
+    public void setStatus(String status) {
+        this.status.set(status);
     }
 }

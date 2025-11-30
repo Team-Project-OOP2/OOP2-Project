@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox alignment="CENTER" spacing="10"
+      xmlns="http://javafx.com/javafx/17"
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="hotelmanagement.controller.ManageRoomsController">
+
+    <padding>
+        <Insets top="20" right="20" bottom="20" left="20"/>
+    </padding>
+
+    <Label text="Manage Rooms"
+           style="-fx-font-size: 26; -fx-font-weight: bold;"/>
+
+    <TableView fx:id="roomTable" prefWidth="800">
+
+        <columns>
+            <TableColumn fx:id="colNumber" text="Room Number" prefWidth="150"/>
+            <TableColumn fx:id="colType" text="Room Type" prefWidth="200"/>
+            <TableColumn fx:id="colPrice" text="Price" prefWidth="150"/>
+            <TableColumn fx:id="colStatus" text="Status" prefWidth="150"/>
+        </columns>
+
+    </TableView>
+
+    <HBox spacing="10" alignment="CENTER">
+        <Button text="Add Room"/>
+        <Button text="Edit Room"/>
+        <Button text="Delete Room"/>
+    </HBox>
+
+</VBox>
