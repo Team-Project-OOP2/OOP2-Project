@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<VBox spacing="15" alignment="CENTER"
+      xmlns="http://javafx.com/javafx/17"
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="hotelmanagement.controller.ReservationFormController">
+
+    <padding><Insets top="20" right="20" bottom="20" left="20"/></padding>
+
+    <Label fx:id="titleLabel"
+           text="Add Reservation"
+           style="-fx-font-size: 20; -fx-font-weight: bold;"/>
+
+    <HBox spacing="10">
+        <Label text="Client:"/>
+        <ComboBox fx:id="comboClient" prefWidth="200"/>
+    </HBox>
+
+    <HBox spacing="10">
+        <Label text="Room:"/>
+        <ComboBox fx:id="comboRoom" prefWidth="200"/>
+    </HBox>
+
+    <HBox spacing="10">
+        <Label text="Start Date:"/>
+        <DatePicker fx:id="startDatePicker"/>
+    </HBox>
+
+    <HBox spacing="10">
+        <Label text="End Date:"/>
+        <DatePicker fx:id="endDatePicker"/>
+    </HBox>
+
+    <HBox spacing="10">
+        <Label text="Status:"/>
+        <ComboBox fx:id="comboStatus" prefWidth="200"/>
+    </HBox>
+
+    <HBox spacing="10" alignment="CENTER">
+        <Button text="Save" onAction="#onSave"/>
+        <Button text="Cancel" onAction="#onCancel"/>
+    </HBox>
+
+</VBox>

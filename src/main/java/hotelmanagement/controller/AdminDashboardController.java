@@ -1,52 +1,47 @@
 package hotelmanagement.controller;
 
-import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
-import javafx.scene.layout.StackPane;
-
-import java.io.IOException;
+import javafx.stage.Stage;
 
 public class AdminDashboardController {
 
-    @FXML
-    private Button btnUsers;
+    public Button btnUsers;
+    public Button btnRooms;
+    public Button btnReservations;
+    public Button btnServices;
+    public Button btnLogout;
 
-    @FXML
-    private Button btnRooms;
-
-    @FXML
-    private Button btnReservations;
-
-    @FXML
-    private Button btnServices;
-
-    @FXML
-    private Button btnLogout;
-
-    @FXML
-    private StackPane contentArea;
-
-    @FXML
-    public void initialize() {
-        btnUsers.setOnAction(e -> loadView("/view/manage-users.fxml"));
-        btnRooms.setOnAction(e -> loadView("/view/manage-rooms.fxml"));
-        btnReservations.setOnAction(e -> loadView("/view/manage-reservations.fxml"));
-        btnServices.setOnAction(e -> loadView("/view/manage-services.fxml"));
-        btnLogout.setOnAction(e -> logout());
-    }
-
-    private void loadView(String path) {
+    private void loadView(String viewName) {
         try {
-            Node view = FXMLLoader.load(getClass().getResource(path));
-            contentArea.getChildren().setAll(view);
-        } catch (IOException e) {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/" + viewName));
+            Parent root = loader.load();
+            Stage stage = (Stage) btnUsers.getScene().getWindow();
+            stage.setScene(new Scene(root));
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }
 
-    private void logout() {
-        System.out.println("LOGOUT CLICKED");
+    public void openManageUsers() {
+        loadView("manage-users.fxml");
+    }
+
+    public void openManageRooms() {
+        loadView("manage-rooms-view.fxml");
+    }
+
+    public void openManageReservations() {
+        loadView("manage-reservations-view.fxml");
+    }
+
+    public void openManageServices() {
+        loadView("manage-services-view.fxml");
+    }
+
+    public void logout() {
+        loadView("login-view.fxml");
     }
 }

@@ -37,7 +37,7 @@ public class LoginController {
         System.out.println("LOGIN SUCCESSFUL: " + user.getRole());
 
         if (user.getRole().equalsIgnoreCase("ADMIN")) {
-            loadView("/view/admin-view.fxml");
+            loadView("/view/admin-dashboard.fxml");
             return;
         }
 

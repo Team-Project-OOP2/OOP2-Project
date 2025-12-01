@@ -30,4 +30,11 @@ public class RoomService {
     public void deleteRoom(String number) {
         rooms.removeIf(r -> r.getNumber().equals(number));
     }
+
+    public Room getRoomByNumber(String number) {
+        return rooms.stream()
+                .filter(r -> r.getNumber().equals(number))
+                .findFirst()
+                .orElse(null);
+    }
 }

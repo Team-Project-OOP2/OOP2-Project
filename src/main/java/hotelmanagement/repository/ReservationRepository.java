@@ -4,14 +4,13 @@ import hotelmanagement.model.Reservation;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Repository за работа с резервации.
- */
 public class ReservationRepository {
 
     private static ReservationRepository instance;
 
-    private List<Reservation> reservations = new ArrayList<>();
+    private final List<Reservation> reservations = new ArrayList<>();
+
+    private ReservationRepository() {}
 
     public static ReservationRepository getInstance() {
         if (instance == null) {
@@ -22,6 +21,14 @@ public class ReservationRepository {
 
     public void addReservation(Reservation reservation) {
         reservations.add(reservation);
+    }
+
+    public void updateReservation(Reservation reservation) {
+        // nothing special – the object is already updated
+    }
+
+    public void deleteReservation(int id) {
+        reservations.removeIf(r -> r.getId() == id);
     }
 
     public List<Reservation> getAllReservations() {

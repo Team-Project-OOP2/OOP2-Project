@@ -1,79 +1,30 @@
 package hotelmanagement.model;
 
-/**
- * Клас Service – представя допълнителна услуга, предлагана от хотела.
- */
+import javafx.beans.property.*;
+
 public class Service {
 
-    private int id;
-    private String name;
-    private double price;
-    private String description;
-    private String category;
+    private final StringProperty id;
+    private final StringProperty name;
+    private final DoubleProperty price;
+    private final StringProperty description;
 
-    /**
-     * Конструктор по подразбиране.
-     */
-    public Service() {}
-
-    /**
-     * Конструктор с параметри.
-     */
-    public Service(int id, String name, double price, String description, String category) {
-        this.id = id;
-        this.name = name;
-        this.price = price;
-        this.description = description;
-        this.category = category;
+    public Service(String id, String name, double price, String description) {
+        this.id = new SimpleStringProperty(id);
+        this.name = new SimpleStringProperty(name);
+        this.price = new SimpleDoubleProperty(price);
+        this.description = new SimpleStringProperty(description);
     }
 
-    public int getId() {
-        return id;
-    }
+    public String getId() { return id.get(); }
+    public StringProperty idProperty() { return id; }
 
-    public void setId(int id) {
-        this.id = id;
-    }
+    public String getName() { return name.get(); }
+    public StringProperty nameProperty() { return name; }
 
-    public String getName() {
-        return name;
-    }
+    public double getPrice() { return price.get(); }
+    public DoubleProperty priceProperty() { return price; }
 
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public double getPrice() {
-        return price;
-    }
-
-    public void setPrice(double price) {
-        this.price = price;
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
-    public String getCategory() {
-        return category;
-    }
-
-    public void setCategory(String category) {
-        this.category = category;
-    }
-
-    @Override
-    public String toString() {
-        return "Service{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", price=" + price +
-                ", category='" + category + '\'' +
-                '}';
-    }
+    public String getDescription() { return description.get(); }
+    public StringProperty descriptionProperty() { return description; }
 }

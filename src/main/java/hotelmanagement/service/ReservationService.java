@@ -5,14 +5,14 @@ import hotelmanagement.repository.ReservationRepository;
 
 import java.util.List;
 
-/**
- * Сервизен клас за работа с резервации.
- */
 public class ReservationService {
 
     private static ReservationService instance;
 
-    private final ReservationRepository reservationRepository = ReservationRepository.getInstance();
+    private final ReservationRepository reservationRepository =
+            ReservationRepository.getInstance();
+
+    private ReservationService() {}
 
     public static ReservationService getInstance() {
         if (instance == null) {
@@ -28,4 +28,17 @@ public class ReservationService {
     public List<Reservation> getAllReservations() {
         return reservationRepository.getAllReservations();
     }
+
+    public void deleteReservation(int id) {
+        reservationRepository.deleteReservation(id);
+    }
+
+    public void updateReservation(Reservation reservation) {
+        reservationRepository.updateReservation(reservation);
+    }
+
+    public void removeReservation(int id) {
+        reservationRepository.deleteReservation(id);
+    }
+
 }

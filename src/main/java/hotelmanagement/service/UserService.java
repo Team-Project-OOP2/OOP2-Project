@@ -42,4 +42,11 @@ public class UserService {
     public void deleteUser(String id) {
         userRepository.deleteUser(id);
     }
+
+    public User getUserByEmail(String email) {
+        return userRepository.getAllUsers().stream()
+                .filter(u -> u.getEmail().equalsIgnoreCase(email))
+                .findFirst()
+                .orElse(null);
+    }
 }
