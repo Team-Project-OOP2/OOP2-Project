@@ -6,6 +6,19 @@ module org.example.hotelmanagementsystem {
     requires org.kordamp.ikonli.javafx;
     requires org.kordamp.bootstrapfx.core;
 
-    opens org.example.hotelmanagementsystem to javafx.fxml;
-    exports org.example.hotelmanagementsystem;
+    opens hotelmanagement.application to javafx.fxml;
+    opens hotelmanagement.controller to javafx.fxml;
+    opens hotelmanagement.model to javafx.fxml;
+    opens hotelmanagement.repository to javafx.fxml;
+    opens hotelmanagement.service to javafx.fxml;
+    opens hotelmanagement.util to javafx.fxml;
+    opens hotelmanagement.view to javafx.fxml;
+
+    exports hotelmanagement.application;
+    exports hotelmanagement.controller;
+    exports hotelmanagement.model;
+    exports hotelmanagement.repository;
+    exports hotelmanagement.service;
+    exports hotelmanagement.util;
+    exports hotelmanagement.view;
 }

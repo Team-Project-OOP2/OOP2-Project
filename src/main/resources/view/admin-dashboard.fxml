@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="hotelmanagement.controller.AdminDashboardController">
+
+    <left>
+        <VBox spacing="15" alignment="TOP_CENTER"
+              style="-fx-background-color:#2C3E50; -fx-padding:20;">
+
+            <Label text="Admin Panel"
+                   style="-fx-text-fill: white; -fx-font-size: 20;"/>
+
+            <Button text="Users" fx:id="btnUsers" style="-fx-pref-width:150;"
+                    onAction="#openManageUsers"/>
+
+            <Button text="Rooms" fx:id="btnRooms" style="-fx-pref-width:150;"
+                    onAction="#openManageRooms"/>
+
+            <Button text="Reservations" fx:id="btnReservations" style="-fx-pref-width:150;"
+                    onAction="#openManageReservations"/>
+
+            <Button text="Services" fx:id="btnServices" style="-fx-pref-width:150;"
+                    onAction="#openManageServices"/>
+
+            <Button text="Logout" fx:id="btnLogout" style="-fx-pref-width:150; -fx-text-fill: red;"
+                    onAction="#logout"/>
+
+        </VBox>
+    </left>
+
+    <center>
+        <StackPane fx:id="contentArea" alignment="CENTER">
+            <Label text="Welcome, Admin!" style="-fx-font-size:28;"/>
+        </StackPane>
+    </center>
+
+</BorderPane>

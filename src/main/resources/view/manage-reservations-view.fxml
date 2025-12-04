@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox spacing="15" alignment="CENTER"
+      xmlns="http://javafx.com/javafx/17"
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="hotelmanagement.controller.ManageReservationsController">
+
+<Label text="Manage Reservations"
+           style="-fx-font-size: 28; -fx-font-weight: bold;"/>
+
+    <TableView fx:id="reservationTable" prefHeight="450" prefWidth="900">
+        <columns>
+            <TableColumn text="ID" fx:id="colId" prefWidth="60"/>
+            <TableColumn text="Client" fx:id="colClient" prefWidth="150"/>
+            <TableColumn text="Room" fx:id="colRoom" prefWidth="100"/>
+            <TableColumn text="Start Date" fx:id="colStartDate" prefWidth="150"/>
+            <TableColumn text="End Date" fx:id="colEndDate" prefWidth="150"/>
+            <TableColumn text="Status" fx:id="colStatus" prefWidth="150"/>
+        </columns>
+    </TableView>
+
+    <HBox spacing="15" alignment="CENTER">
+        <Button text="Add Reservation" fx:id="btnAdd"/>
+        <Button text="Edit Reservation" fx:id="btnEdit"/>
+        <Button text="Delete Reservation" fx:id="btnDelete"/>
+    </HBox>
+
+</VBox>
