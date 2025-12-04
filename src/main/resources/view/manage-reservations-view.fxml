@@ -23,9 +23,9 @@
     </TableView>
 
     <HBox spacing="15" alignment="CENTER">
-        <Button text="Add Reservation" fx:id="btnAdd"/>
-        <Button text="Edit Reservation" fx:id="btnEdit"/>
-        <Button text="Delete Reservation" fx:id="btnDelete"/>
+        <Button text="Add Reservation" fx:id="btnAdd" onAction="#onAdd"/>
+        <Button text="Edit Reservation" fx:id="btnEdit" onAction="#onEdit"/>
+        <Button text="Delete Reservation" fx:id="btnDelete" onAction="#onDelete"/>
     </HBox>
 
 </VBox>

@@ -28,9 +28,10 @@
     </TableView>
 
     <HBox spacing="10" alignment="CENTER">
-        <Button text="Add Room"/>
-        <Button text="Edit Room"/>
-        <Button text="Delete Room"/>
+        <Button text="Add Room" onAction="#onAddRoom"/>
+        <Button text="Edit Room" onAction="#onEditRoom"/>
+        <Button text="Delete Room" onAction="#onDeleteRoom"/>
     </HBox>
+
 
 </VBox>
