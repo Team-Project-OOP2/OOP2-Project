@@ -24,7 +24,6 @@ public class MainApplication extends Application {
         stage.setTitle("Hotel Management System");
         stage.setScene(scene);
 
-
         UserService userService = UserService.getInstance();
         userService.registerUser(new Admin("Admin User", "admin@hotel.com", "1234"));
         userService.registerUser(new Manager("Manager User", "manager@hotel.com", "1234"));
