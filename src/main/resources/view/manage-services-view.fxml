@@ -25,9 +25,20 @@
     </TableView>
 
     <HBox spacing="10" alignment="CENTER">
-        <Button fx:id="btnAdd" text="Add Service"/>
-        <Button fx:id="btnEdit" text="Edit Service"/>
-        <Button fx:id="btnDelete" text="Delete Service"/>
+
+        <Button text="Add Service"
+                fx:id="btnAdd"
+                onAction="#onAddService"/>
+
+        <Button text="Edit Service"
+                fx:id="btnEdit"
+                onAction="#onEditService"/>
+
+        <Button text="Delete Service"
+                fx:id="btnDelete"
+                onAction="#onDeleteService"/>
+
     </HBox>
+
 
 </VBox>

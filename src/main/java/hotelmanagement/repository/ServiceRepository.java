@@ -7,9 +7,10 @@ import java.util.List;
 public class ServiceRepository {
 
     private static ServiceRepository instance;
+
     private final List<Service> services = new ArrayList<>();
 
-    private ServiceRepository() {}
+    private ServiceRepository() { }
 
     public static ServiceRepository getInstance() {
         if (instance == null) {

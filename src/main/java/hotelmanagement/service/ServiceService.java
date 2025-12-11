@@ -8,7 +8,9 @@ import java.util.List;
 public class ServiceService {
 
     private static ServiceService instance;
+
     private final ServiceRepository serviceRepository = ServiceRepository.getInstance();
+
 
     private ServiceService() {}
 
@@ -17,6 +19,10 @@ public class ServiceService {
             instance = new ServiceService();
         }
         return instance;
+    }
+
+    public String generateId() {
+        return String.valueOf(serviceRepository.getAllServices().size() + 1);
     }
 
     public void addService(Service service) {
