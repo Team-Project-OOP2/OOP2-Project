@@ -5,15 +5,13 @@ import hotelmanagement.repository.UserRepository;
 
 import java.util.List;
 
-/**
- * Сервизен клас за работа с потребители.
- * Тук е бизнес логиката – валидиране, проверка, обработка на данни.
- */
 public class UserService {
 
     private static UserService instance;
 
     private final UserRepository userRepository = UserRepository.getInstance();
+
+    private UserService() {}
 
     public static UserService getInstance() {
         if (instance == null) {
@@ -24,6 +22,13 @@ public class UserService {
 
     public void registerUser(User user) {
         userRepository.addUser(user);
+    }
+
+    public void addUser(User user) {
+        registerUser(user);
+    }
+
+    public void updateUser(User user) {
     }
 
     public List<User> getAllUsers() {
