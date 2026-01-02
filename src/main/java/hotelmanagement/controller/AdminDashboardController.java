@@ -1,47 +1,49 @@
 package hotelmanagement.controller;
 
+import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
-import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.stage.Stage;
+import javafx.scene.layout.StackPane;
 
 public class AdminDashboardController {
 
-    public Button btnUsers;
-    public Button btnRooms;
-    public Button btnReservations;
-    public Button btnServices;
-    public Button btnLogout;
+    @FXML
+    private StackPane contentArea;
 
-    private void loadView(String viewName) {
+    private void loadView(String fxml) {
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/" + viewName));
-            Parent root = loader.load();
-            Stage stage = (Stage) btnUsers.getScene().getWindow();
-            stage.setScene(new Scene(root));
+            Parent view = FXMLLoader.load(
+                    getClass().getResource("/view/" + fxml)
+            );
+            contentArea.getChildren().clear();
+            contentArea.getChildren().add(view);
         } catch (Exception e) {
             e.printStackTrace();
         }
     }
 
-    public void openManageUsers() {
+    @FXML
+    private void openManageUsers() {
         loadView("manage-users.fxml");
     }
 
-    public void openManageRooms() {
+    @FXML
+    private void openManageRooms() {
         loadView("manage-rooms-view.fxml");
     }
 
-    public void openManageReservations() {
+    @FXML
+    private void openManageReservations() {
         loadView("manage-reservations-view.fxml");
     }
 
-    public void openManageServices() {
+    @FXML
+    private void openManageServices() {
         loadView("manage-services-view.fxml");
     }
 
-    public void logout() {
+    @FXML
+    private void logout() {
         loadView("login-view.fxml");
     }
 }
