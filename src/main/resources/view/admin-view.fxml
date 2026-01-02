@@ -19,7 +19,6 @@
 
     <Label text="Welcome, Admin!"/>
 
-    <!-- Buttons panel -->
     <VBox spacing="10" alignment="CENTER">
 
         <Button fx:id="btnManageUsers"
