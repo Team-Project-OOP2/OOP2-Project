@@ -21,6 +21,7 @@ public class AdminDashboardController {
             e.printStackTrace();
         }
     }
+
     @FXML
     private void openManageUsers() {
         loadView("manage-users.fxml");
