@@ -26,9 +26,7 @@ public class MainApplication extends Application {
 
         UserService userService = UserService.getInstance();
         userService.registerUser(new Admin("Admin User", "admin@hotel.com", "1234"));
-        userService.registerUser(new Manager("Manager User", "manager@hotel.com", "1234"));
-        userService.registerUser(new Receptionist("Receptionist User", "recept@hotel.com", "1234"));
-        userService.registerUser(new Client("Client User", "client@hotel.com", "1234"));
+
 
 
         RoomService roomService = RoomService.getInstance();
@@ -39,43 +37,6 @@ public class MainApplication extends Application {
 
 
         ReservationService reservationService = ReservationService.getInstance();
-
-        reservationService.addReservation(
-                new Reservation(
-                        1,
-                        userService.getUserByEmail("client@hotel.com"),
-                        null,
-                        roomService.getRoomByNumber("101"),
-                        LocalDate.of(2025, 1, 10),
-                        LocalDate.of(2025, 1, 15),
-                        "Confirmed"
-                )
-        );
-
-        reservationService.addReservation(
-                new Reservation(
-                        2,
-                        userService.getUserByEmail("client@hotel.com"),
-                        null,
-                        roomService.getRoomByNumber("201"),
-                        LocalDate.of(2025, 3, 5),
-                        LocalDate.of(2025, 3, 9),
-                        "Pending"
-                )
-        );
-
-        reservationService.addReservation(
-                new Reservation(
-                        3,
-                        userService.getUserByEmail("recept@hotel.com"),
-                        null,
-                        roomService.getRoomByNumber("102"),
-                        LocalDate.of(2025, 2, 1),
-                        LocalDate.of(2025, 2, 5),
-                        "Cancelled"
-                )
-        );
-
 
         ServiceService serviceService = ServiceService.getInstance();
         serviceService.addService(new Service("1", "Room Cleaning", 20.0, "Basic daily cleaning"));
